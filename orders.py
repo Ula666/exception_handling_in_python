@@ -27,9 +27,15 @@ finally:
 
 # 3rd iteration
 # Create a function to do the same job DRY
-def read_file():
-    file = open("orders.text")
-    print(file.read())
+# def read_file():
+#     file = open("orders.text")
+#     print(file.read())
 
 # 4th interation
 
+def write_to_file(file, order_item):
+    try:
+        with open("orders.text", 'a') as file_object:
+            file_object.write("Dessert\n")
+    except FileNotFoundError as errmsg:
+        print(errmsg)

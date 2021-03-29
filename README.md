@@ -36,3 +36,28 @@ finally:
 
 It is worth noting that the `+` operator can be used with
 ```
+
+- open a file and read aa a list:
+```python
+try:
+    file = open("orders.text")
+    print("File was found")
+    print(file.read())
+except FileNotFoundError as errmsg:
+    print(errmsg)
+finally:
+    print("Your task is to read the data and display as a list")
+
+```
+- add new item to a file:
+```python
+def write_to_file(file, order_item):
+    try:
+        with open("orders.text", 'a') as file_object:
+            file_object.write("Dessert\n")
+    except FileNotFoundError as errmsg:
+        print(errmsg)
+```
+
+### CRUD -  `create`, `read`, `update`, `delete`
+
